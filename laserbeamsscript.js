@@ -639,9 +639,10 @@
 			function handleTouchStart(e){ 
 			    e.preventDefault(); 
 			    // clicked();
-			    tapped();
-			    for (var i = e.touches.length - 1; i >= 0; i--) {
-			    	if(e.touches[i].clientX>CANVAS_WIDTH/2)
+					tapped();
+					var touches = e.changedTouches;
+			    for (var i = touches.length - 1; i >= 0; i--) {
+			    	if(touches[i].clientX>CANVAS_WIDTH/2)
 			    	{
 			    		player.jump();
 			    	}
@@ -649,7 +650,6 @@
 			    	{
 			    		player.flip();
 						}
-						// e.touches.splice(i,1);
 			    };
 			}
 
@@ -817,5 +817,5 @@
 			
 
 			window.addEventListener('keypress', handlekeypressed);
-			// window.addEventListener('mousedown', clicked);
+			window.addEventListener('mousedown', clicked);
 			window.addEventListener('touchstart', handleTouchStart);
