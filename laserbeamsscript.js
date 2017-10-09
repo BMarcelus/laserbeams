@@ -394,7 +394,7 @@
 
 				canvas.fillStyle='#000';
           		canvas.font= baseRatio/2+"px Impact";
-				canvas.fillText("Use A and L keys on pc", 0,baseRatio/2);
+				canvas.fillText("Use A and L Keys on pc", 0,baseRatio/2);
 			}
 
 			var gameOverImg=new Image();
@@ -462,9 +462,9 @@
 
 						
 					var fontSize = baseRatio*2;
-				canvas.font= fontSize+"px Impact";
+				canvas.font= fontSize+"px Arial";
 				canvas.textAlign='center';
-				canvas.lineWidth = fontSize/30;
+				canvas.lineWidth = fontSize/60;
 				canvas.strokeStyle="#488";
 				canvas.fillStyle='#fff';				
 				canvas.fillText(""+score, CANVAS_WIDTH/2, CANVAS_HEIGHT/4);
@@ -617,8 +617,6 @@
 				player.y=CANVAS_HEIGHT/2;
 				state="play";
 				score=0;
-
-
 				// laserbeamImage=colorize(laserbeamImage, Math.floor( Math.random()*7  )*60 +30 );
 
 				timeFrame=0;
@@ -638,7 +636,7 @@
 			    	player.flip();
 			    }
 			}
-			document.ontouchstart = function(e){ 
+			function handleTouchStart(e){ 
 			    e.preventDefault(); 
 			    // clicked();
 			    tapped();
@@ -651,7 +649,7 @@
 			    	{
 			    		player.flip();
 						}
-						break;
+						e.touches.splice(i,1);
 			    };
 			}
 
@@ -815,3 +813,9 @@
 			    }
 			    return color;
 			}
+
+			
+
+			window.addEventListener('keypress', handlekeypressed);
+			window.addEventListener('mousedown', clicked);
+			window.addEventListener('touchStart', handleTouchStart);
