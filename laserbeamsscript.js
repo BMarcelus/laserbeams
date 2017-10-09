@@ -394,7 +394,7 @@
 
 				canvas.fillStyle='#000';
           		canvas.font= baseRatio/2+"px Impact";
-				canvas.fillText("Use A and L Keys on pc", 0,baseRatio/2);
+				canvas.fillText("Use A and L Keys on PC", 0,baseRatio/2);
 			}
 
 			var gameOverImg=new Image();
@@ -817,5 +817,5 @@
 			
 
 			window.addEventListener('keypress', handlekeypressed);
-			window.addEventListener('mousedown', clicked);
+			// window.addEventListener('mousedown', clicked);
 			window.addEventListener('touchstart', handleTouchStart);
