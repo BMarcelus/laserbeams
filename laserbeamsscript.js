@@ -394,7 +394,7 @@
 
 				canvas.fillStyle='#000';
           		canvas.font= baseRatio/2+"px Impact";
-				canvas.fillText("Use A and L keys on pc.", 0,baseRatio/2);
+				canvas.fillText("Use A and L keys on pc", 0,baseRatio/2);
 			}
 
 			var gameOverImg=new Image();
@@ -642,7 +642,7 @@
 			    e.preventDefault(); 
 			    // clicked();
 			    tapped();
-			    for (var i = e.touches.length - 1; i == 0; i--) {
+			    for (var i = e.touches.length - 1; i >= 0; i--) {
 			    	if(e.touches[i].clientX>CANVAS_WIDTH/2)
 			    	{
 			    		player.jump();
@@ -650,7 +650,8 @@
 			    	else
 			    	{
 			    		player.flip();
-			    	}
+						}
+						break;
 			    };
 			}
 
