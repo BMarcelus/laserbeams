@@ -626,6 +626,7 @@
 			}
 			function clicked(e)
 			{
+				e.preventDefault();
 				tapped();
 				
 				if(e.clientX>CANVAS_WIDTH/2)
