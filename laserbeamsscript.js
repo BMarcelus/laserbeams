@@ -649,7 +649,7 @@
 			    	{
 			    		player.flip();
 						}
-						e.touches.splice(i,1);
+						// e.touches.splice(i,1);
 			    };
 			}
 
