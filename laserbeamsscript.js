@@ -818,4 +818,4 @@
 
 			window.addEventListener('keypress', handlekeypressed);
 			window.addEventListener('mousedown', clicked);
-			window.addEventListener('touchStart', handleTouchStart);
+			window.addEventListener('touchstart', handleTouchStart);
